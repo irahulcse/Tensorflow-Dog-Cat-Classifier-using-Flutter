@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cat"s v/s Dogs Classifier',
+      title: 'Flower Classifier',
       home: MySplash(),
       debugShowCheckedModeBanner: false,
     );
