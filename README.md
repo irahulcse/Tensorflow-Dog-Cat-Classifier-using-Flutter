@@ -24,7 +24,7 @@ The Parent Repository of this project can be found on this [link](https://github
 
 <!-- ### Screenshots and Working GIFS: -->
 
-<img src="images/rovers.gif" height="300em"  width="250em"/> <img src="images/dog1.PNG" height="300em" width="250em"/> <img src="images/dog2.PNG" height="300em" width="250em"/><img src="images/dog3 .PNG" height="300em" width="250em"/>
+<img src="images/rovers.gif" height="500em"  width="300em"/> <img src="images/dog1.PNG" height="500em" width="300em"/> <img src="images/dog2.PNG" height="500em" width="300em"/><img src="images/dog3.PNG" height="500em" width="300em"/>
 
 
  Sorry for the quality of the GIF :pray:
