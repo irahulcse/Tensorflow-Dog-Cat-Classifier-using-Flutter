@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
 
   loadModel() async {
     await Tflite.loadModel(
-      model: 'assets/model_unquant.tflit',
+      model: 'assets/model_unquant.tflite',
       labels: 'assets/labels.txt',
     );
   }
@@ -59,6 +59,7 @@ class _HomeState extends State<Home> {
     setState(() {
       _image = File(image.path);
     });
+    classifyImage(_image);
   }
 
   pickGalleryImage() async {
@@ -70,6 +71,7 @@ class _HomeState extends State<Home> {
     setState(() {
       _image = File(image.path);
     });
+    classifyImage(_image);
   }
 
   @override
