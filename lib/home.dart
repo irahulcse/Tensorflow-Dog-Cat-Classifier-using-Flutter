@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:tflite/tflite.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,6 +11,67 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool _loading = true;
+  File _image;
+  List _output;
+  final picker = ImagePicker();
+
+  @override
+  void initState() {
+    super.initState();
+    loadModel().then((value) {
+      setState(() {});
+    });
+  }
+
+  classifyImage(File image) async {
+    var output = await Tflite.runModelOnImage(
+      path: image.path,
+      numResults: 2,
+      threshold: 0.5,
+      imageMean: 127.5,
+      imageStd: 127.5,
+    );
+    setState(() {
+      _output = output;
+      _loading = false;
+    });
+  }
+
+  loadModel() async {
+    await Tflite.loadModel(
+      model: 'assets/model_unquant.tflit',
+      labels: 'assets/labels.txt',
+    );
+  }
+
+  @override
+  void dispose() {
+    Tflite.close();
+    super.dispose();
+  }
+
+  pickImage() async {
+    var image = await picker.getImage(source: ImageSource.camera);
+
+    if (image == null) {
+      return null;
+    }
+    setState(() {
+      _image = File(image.path);
+    });
+  }
+
+  pickGalleryImage() async {
+    var image = await picker.getImage(source: ImageSource.gallery);
+
+    if (image == null) {
+      return null;
+    }
+    setState(() {
+      _image = File(image.path);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,14 +120,37 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     )
-                  : Container(),
+                  : Container(
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 250,
+                            child: Image.file(
+                              _image,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          _output != null
+                              ? Text(
+                                  '${_output[0]}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )
+                              : Container(),
+                        ],
+                      ),
+                    ),
             ),
             Container(
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: pickImage,
                     child: Container(
                       width: MediaQuery.of(context).size.width - 200,
                       alignment: Alignment.center,
@@ -86,7 +174,7 @@ class _HomeState extends State<Home> {
                     height: 6,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: pickGalleryImage,
                     child: Container(
                       width: MediaQuery.of(context).size.width - 200,
                       alignment: Alignment.center,
