@@ -1,6 +1,7 @@
-![Image](images/rovers.jpg)
-#  :boom:
+![Image](images/rover.jpg)
+#  Cat Dog Classifier using Tensorflow Flite using Flutter:boom:
 
+Created an Dog v/s Cat Classifer using Tensorflow in Flutter, to check the cat v/s dogs. 
 
 
 ### Show some love :heart: and star the repo to support the project
@@ -13,19 +14,20 @@ The Parent Repository of this project can be found on this [link](https://github
 
 <!-- [Demo Application](https://irahulcse.github.io/Telegram_Ui_Flutter/) -->
 
-<!-- ## Features Needed to Be Added:
+## Features Listed Below:
 
-* [✅] Live Working Project
-* [✅] Widgets used like ListTile, ListView Builder, Center, Text and Circle Avatar Widgets
-* [❌] Everything is static right now, no API integration done on it. -->
+* [✅] Used Kaggle Dataset of Cat/Dogs.
+* [✅] Tensorflow Lite had been used to do the classification.
+<!-- * [✅] Widgets used like ListTile, ListView Builder, Center, Text and Circle Avatar Widgets -->
+<!-- * [❌] Everything is static right now, no API integration done on it. -->
 
 
 <!-- ### Screenshots and Working GIFS: -->
 
-<!-- <img src="images/rovers.gif" height="300em"  width="250em"/> <img src="images/1.jpg" height="300em" width="250em"/> <img src="images/2.jpg" height="300em" width="250em"/> -->
+<img src="images/rovers.gif" height="300em"  width="250em"/> <img src="images/dog1.PNG" height="300em" width="250em"/> <img src="images/dog2.PNG" height="300em" width="250em"/><img src="images/dog3 .PNG" height="300em" width="250em"/>
 
 
- <!-- Sorry for the quality of the GIF :pray: -->
+ Sorry for the quality of the GIF :pray:
 
 ### Created with :heart:
 I am Rahul Chandra, A a Pre-Final Year Computer Science Student, an experienced Software Developer with a demonstrated history of working in the information technology and services industry. Seasoned Competitive Coder. Skilled in C++, Python, Data Analysis, Java, Dart and Julia. Strong information technology professional with a Bachelor of Engineering - BE focused in Computer Science from Chandigarh University. 
