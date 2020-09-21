@@ -77,131 +77,20 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF101010),
       body: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 24,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFFA8e063),
+              Colors.purpleAccent,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.004, 1],
+          ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              "Dog / Cat Classifier",
-              style: TextStyle(
-                color: Colors.yellow,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Center(
-              child: _loading
-                  ? Container(
-                      width: 400,
-                      child: Column(
-                        children: [
-                          Image.asset('assets/cat.png'),
-                          SizedBox(
-                            height: 50,
-                          )
-                        ],
-                      ),
-                    )
-                  : Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 300,
-                            // width: 500,
-                            child: Image.file(
-                              _image,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          _output != null
-                              ? Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 17,
-                                    ),
-                                    Text(
-                                      '${_output[0]['label']}',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 40,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 17,
-                                    ),
-                                  ],
-                                )
-                              : Container(),
-                        ],
-                      ),
-                    ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  GestureDetector(
-                    onTap: pickImage,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width - 200,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 17,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Text(
-                        "Take a Photo",
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 6,
-                  ),
-                  GestureDetector(
-                    onTap: pickGalleryImage,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width - 200,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 24,
-                        vertical: 17,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Text(
-                        "Camera Roll",
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 24),
         ),
       ),
     );

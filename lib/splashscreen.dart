@@ -15,15 +15,22 @@ class _MySplashState extends State<MySplash> {
       seconds: 2,
       navigateAfterSeconds: Home(),
       title: Text(
-        "Dogs v/s Cat's Classifier",
+        "Flower Classifier",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 30,
-          color: Colors.purpleAccent,
+          color: Colors.white,
+          // decoration: LinearGradient(colors: Colors.amber,)
         ),
       ),
       image: Image.asset(
-        'assets/cat.png',
+        'assets/flower.png',
+      ),
+      gradientBackground: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [0.004, 1],
+        colors: [Color(0xFFA8e063), Colors.purpleAccent],
       ),
       backgroundColor: Colors.black,
       photoSize: 50,
