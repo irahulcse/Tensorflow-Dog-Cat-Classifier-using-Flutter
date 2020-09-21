@@ -86,28 +86,18 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 20,
+              height: 40,
             ),
             Text(
-              "Teaching Machine Learning",
+              "Dog / Cat Classifier",
               style: TextStyle(
                 color: Colors.yellow,
-                fontSize: 18,
-              ),
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Text(
-              "Teaching Machine Learning",
-              style: TextStyle(
-                color: Colors.yellow,
-                fontSize: 24,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 6,
             ),
             Center(
               child: _loading
@@ -126,7 +116,8 @@ class _HomeState extends State<Home> {
                       child: Column(
                         children: [
                           Container(
-                            height: 250,
+                            height: 300,
+                            // width: 500,
                             child: Image.file(
                               _image,
                             ),
@@ -135,12 +126,23 @@ class _HomeState extends State<Home> {
                             height: 12,
                           ),
                           _output != null
-                              ? Text(
-                                  '${_output[0]}',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              ? Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 17,
+                                    ),
+                                    Text(
+                                      '${_output[0]['label']}',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 40,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 17,
+                                    ),
+                                  ],
                                 )
                               : Container(),
                         ],
