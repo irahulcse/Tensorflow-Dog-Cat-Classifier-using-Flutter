@@ -1,5 +1,5 @@
 #!/bin/sh
-git pull origin master
+git pull origin main
 git add .
 git commit -m "Good First Commit at `date +%F-%T`"
 git branch -M main
